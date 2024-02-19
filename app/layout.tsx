@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import Navbar from "./Navbar";
+import { Box } from "@mui/material";
+import Footer from "@/components/Footer";
+import AuthProvider from "@/config/AuthContext";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -11,12 +12,59 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body>
+        <AuthProvider>
+          <Navbar />
+          <Box
+            sx={{
+              minHeight: "100vh",
+              margin: "auto",
+              paddingTop: "4.4rem",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              background:
+                "linear-gradient(to right, #FAD8C7, #9BA3B5)",
+              "@keyframes fadeInFromLeft": {
+                "0%": {
+                  transform: "translateX(2rem)",
+                  opacity: "0",
+                },
+                "100%": {
+                  transform: "translateX(0)",
+                  opacity: "1",
+                },
+              },
+              "@keyframes fadeInFromTop": {
+                "0%": {
+                  transform: "translateY(-1rem)",
+                  opacity: "0",
+                },
+                "100%": {
+                  transform: "translateY(0)",
+                  opacity: "1",
+                },
+              },
+              "@keyframes fadeIn": {
+                "0%": {
+                  opacity: "0",
+                },
+                "100%": {
+                  opacity: "1",
+                },
+              },
+            }}
+          >
+            {children}
+            <Footer />
+          </Box>
+        </AuthProvider>
+      </body>
     </html>
   );
 }

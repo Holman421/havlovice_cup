@@ -1,0 +1,50 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider          = "postgresql"
+  url               = env("NEON_DB")
+  shadowDatabaseUrl = env("NEON_DB_SHADOW")
+}
+
+enum Position {
+  GOALKEEPER
+  DEFENDER
+  ATACKER
+}
+
+enum Category {
+  WOMEN
+  MEN
+}
+
+model Player {
+  id          String   @id @default(cuid())
+  playerName  String
+  dressNumber Int
+  position    Position
+  Team        Team     @relation(fields: [teamId], references: [id])
+  teamId      String
+}
+
+model Team {
+  id             String    @id @default(cuid())
+  teamName       String    @unique
+  category       Category
+  isPaid         Boolean
+  players        Player[]
+  createdAt      DateTime  @default(now())
+  dateOfApproval DateTime?
+  leaderEmail    String
+  leaderTel      String
+}
+
+model Admin {
+  id       String @id @default(cuid())
+  userName String @unique
+  password String
+}
