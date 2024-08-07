@@ -1,36 +1,22 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Havlovice Cup Project
 
-## Getting Started
+## Overview
 
-First, run the development server:
+This project is designed to simplify the process of signing up for Havlovice Cup. It provides a streamlined interface for players to register quickly and easily.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **User-Friendly Form**: Collects essential details including name, contact info, team affiliation, and skill level.
+- **Responsive Design**: Accessible on any device, ensuring a smooth user experience.
+- **Secure Data Handling**: Safely stores registration information for easy management by event organizers.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Purpose
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+This project was intended as a real world use for my friends, but since the floorball cup was canceled, it ended up being unnecessary and remains unfinished.
 
-## Learn More
+## Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+- **HTML5** | **CSS3** | **JavaScript**
+- **Bootstrap** for responsive design
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+For more details, visit [https://your-project-url.com](https://your-project-url.com).
